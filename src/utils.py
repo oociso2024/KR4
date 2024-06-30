@@ -23,7 +23,7 @@ def users_work(data_search):
                     5 - добавить вакансию
                     6 - показать вакансии только с сайта SJ.ru
                     7 - показать вакансии только с сайта HH.ru
-                    8 - показать топ 20 вакансий 
+                    8 - показать топ вакансий 
                     9 - выход из программы 
 
                     Выберите действие (цифра от 0 до 9) и нажмите "Enter": """))
@@ -61,10 +61,15 @@ def users_work(data_search):
                     answer_vacancy_list = [line for line in all_vacancy_list if "hh.ru" in line['url']]
 
                 elif choice_action == 8:
-                    sort_data = SortVacancies()
-                    actual_vacancy_list = [line for line in all_vacancy_list if isinstance(line['salary_from'], int)][
-                                          :20]
-                    answer_vacancy_list = sort_data.sort_vacancies('salary_from', actual_vacancy_list)
+                    try:
+                        user_vacancies = int(input("\nВведите количество вакансий в топ списке: "))
+                        sort_data = SortVacancies()
+                        actual_vacancy_list = [line for line in all_vacancy_list if
+                                               isinstance(line['salary_from'], int)][
+                                              :user_vacancies]
+                        answer_vacancy_list = sort_data.sort_vacancies('salary_from', actual_vacancy_list)
+                    except ValueError:
+                        print("Не верный ввод, вводимые данные должны быть целым числом от 1 до 100. Попробуйте ещё раз")
 
                 elif choice_action == 9:
                     print("Программа завершена.")
