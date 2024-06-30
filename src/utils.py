@@ -3,7 +3,8 @@ from work_vacancies import SortVacancies, PerformanceVacancies
 
 
 def users_work(data_search):
-    '''Функция для работы с пользователем'''
+    """Функция для работы с пользователем"""
+
     work_js = WorkJson()
     # Создаем экземпляр класса для работы с Json - файлом
     work_js.sav_json(work_js.preparation_data_api(data_search))
@@ -69,7 +70,9 @@ def users_work(data_search):
                                               :user_vacancies]
                         answer_vacancy_list = sort_data.sort_vacancies('salary_from', actual_vacancy_list)
                     except ValueError:
-                        print("Не верный ввод, вводимые данные должны быть целым числом от 1 до 100. Попробуйте ещё раз")
+                        print("Не верный ввод, вводимые данные должны быть целым числом от 1 до 100. "
+                              "Попробуйте ещё раз")
+
 
                 elif choice_action == 9:
                     print("Программа завершена.")

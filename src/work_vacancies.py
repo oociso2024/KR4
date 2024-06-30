@@ -3,7 +3,6 @@ class PerformanceVacancies():
     #
     def __init__(self, data_vacancy: dict) -> None:
         self.data_vacancy = data_vacancy
-
         self.vacancy_id = self.data_vacancy.get('id')
         self.vacancy_name = self.data_vacancy.get('name')
         self.date_publishedt = self.data_vacancy.get('date_publishedt')
