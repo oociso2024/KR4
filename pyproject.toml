@@ -1,15 +1,13 @@
 [tool.poetry]
-name = "KR4"
+name = "project-kr4"
 version = "0.1.0"
 description = ""
-authors = ["Oleg Nanovskiy <oociso@ya.ru>"]
+authors = ["Oleg Nanovsky <oociso@ya.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12.1"
+python = "^3.12"
 
-[tool.poetry.group.dev.dependencies]
-yes = "^0.0.1"
 
 [build-system]
 requires = ["poetry-core"]
